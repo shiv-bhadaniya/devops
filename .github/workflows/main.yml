@@ -1,0 +1,19 @@
+name: React Github Action
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    -uses: action/checkout@v3
+    -name: Use JS
+
+    uses: actions/setup/step-node@v3
+    with:
+      node-version: 16
+    -name: Install dependenies
+     run: npm install
+    -name: Run
+     run: npm start 
